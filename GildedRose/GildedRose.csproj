@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GildedRose.cs" />
+    <Compile Include="Items\AgedBrie.cs" />
+    <Compile Include="Items\BackstagePass.cs" />
+    <Compile Include="Items\Gloves.cs" />
+    <Compile Include="Items\Sulfuras.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="ItemManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

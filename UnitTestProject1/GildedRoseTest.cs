@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GildedRoseKata;
+using GildedRose.Items;
 using System.Collections.Generic;
+using GildedRoseKata;
 
 namespace GildedRoseTests
 {
@@ -13,31 +14,20 @@ namespace GildedRoseTests
         private Item backstagePass;
         private Item Sulfuras;
         private List<Item> Items;
-        private GildedRose gildedRose;
+        private ItemManager gildedRose;
         [TestInitialize]
         public void Initialize()
         {
-            normalItem = new Item();
-            normalItem.Name = "Gloves";
-            normalItem.SellIn = 5;
-            normalItem.Quality = 20;
-            agedBrie = new Item();
-            agedBrie.Name = "Aged Brie";
-            agedBrie.SellIn = 5;
-            agedBrie.Quality = 5;
-            backstagePass = new Item();
-            backstagePass.Name = "Backstage passes to a TAFKAL80ETC concert";
-            backstagePass.Quality = 30;
-            backstagePass.SellIn = 15;
-            Sulfuras = new Item();
-            Sulfuras.Name = "Sulfuras, Hand of Ragnaros";
-            Sulfuras.Quality = 80;
+            normalItem = new Gloves(20, 5);
+            agedBrie = new AgedBrie(5, 5);
+            backstagePass = new BackstagePass(30, 15);
+            Sulfuras = new Sulfuras();
             Items = new List<Item>();
             Items.Add(normalItem);
             Items.Add(agedBrie);
             Items.Add(backstagePass);
             Items.Add(Sulfuras);
-            gildedRose = new GildedRose(Items);
+            gildedRose = new ItemManager(Items);
         }
 
         [TestMethod]
